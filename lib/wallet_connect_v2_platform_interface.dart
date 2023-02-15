@@ -37,7 +37,7 @@ abstract class WalletConnectV2Platform extends PlatformInterface {
     throw UnimplementedError('init() has not been implemented.');
   }
 
-  Future<void> connect() {
+  Future<String?> connect() {
     throw UnimplementedError('connect() has not been implemented.');
   }
 
