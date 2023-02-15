@@ -76,7 +76,6 @@ class WalletConnectV2 {
         .init(projectId: projectId, appMetadata: appMetadata);
   }
 
-  /// Connect to listen event, for Wallet & DApp to connect to Relay service
   Future<String?> connect() async {
     return await WalletConnectV2Platform.instance.connect();
   }
