@@ -35,7 +35,7 @@ class MethodChannelWalletConnectV2 extends WalletConnectV2Platform {
   }
 
   @override
-  Future<String?> connect() {
+  Future<String?> connect() async{
     final String? result = await methodChannel.invokeMethod('connect');
     return result;
   }
