@@ -35,8 +35,9 @@ class MethodChannelWalletConnectV2 extends WalletConnectV2Platform {
   }
 
   @override
-  Future<void> connect() {
-    return methodChannel.invokeMethod('connect');
+  Future<String?> connect() {
+    final String? result = methodChannel.invokeMethod('connect');
+    return result;
   }
 
   @override

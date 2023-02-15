@@ -34,6 +34,7 @@ public class SwiftWalletConnectV2Plugin: NSObject, FlutterPlugin, FlutterStreamH
                 let metadata: AppMetadata = try! JSONDecoder().decode(AppMetadata.self, from: JSONSerialization.data(withJSONObject: appMetadata))
                 
                 Networking.configure(projectId: projectId, socketFactory: SocketFactory(), socketConnectionType: .manual)
+                Networking.configure(projectId: projectId, socketFactory: SocketFactory(), socketConnectionType: .manual)
             
                 Pair.configure(metadata: metadata)
                 
@@ -109,6 +110,8 @@ public class SwiftWalletConnectV2Plugin: NSObject, FlutterPlugin, FlutterStreamH
         case "connect": do {
             do {
                 try Networking.instance.connect()
+                let clientId = try! Networking.interactor.getClientId()
+                result(clientId)
             } catch let error {
                 onError(code: "connect_error", errorMessage: error.localizedDescription)
             }
