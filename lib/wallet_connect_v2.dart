@@ -77,8 +77,8 @@ class WalletConnectV2 {
   }
 
   /// Connect to listen event, for Wallet & DApp to connect to Relay service
-  Future<void> connect() {
-    return WalletConnectV2Platform.instance.connect();
+  Future<String?> connect() async {
+    return await WalletConnectV2Platform.instance.connect();
   }
 
   /// Disconnect, for Wallet & DApp to disconnect with Relay service
