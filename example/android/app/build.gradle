@@ -71,13 +71,18 @@ android {
     }
     namespace 'com.avacus.wallet_connect_v2_example'
 
-    packagingOptions {
-        exclude "META-INF/INDEX.LIST"
-        exclude "META-INF/DEPENDENCIES"
-        exclude "META-INF/LICENSE.md"
-        exclude "META-INF/NOTICE.md"
-        exclude "META-INF/versions/9/previous-compilation-data.bin"
-    }
+
+packagingOptions {
+    exclude 'META-INF/DEPENDENCIES'
+    exclude 'META-INF/LICENSE'
+    exclude 'META-INF/LICENSE.txt'
+    exclude 'META-INF/license.txt'
+    exclude 'META-INF/NOTICE'
+    exclude 'META-INF/NOTICE.txt'
+    exclude 'META-INF/notice.txt'
+    exclude 'META-INF/ASL2.0'
+    exclude("META-INF/*.kotlin_module") 
+} 
 }
 
 flutter {
