@@ -14,10 +14,15 @@ ProposalNamespace _$ProposalNamespaceFromJson(Map<String, dynamic> json) =>
           (json['methods'] as List<dynamic>).map((e) => e as String).toList(),
       events:
           (json['events'] as List<dynamic>).map((e) => e as String).toList(),
+      extensions: (json['extensions'] as List<dynamic>?)
+          ?.map((e) => Extension.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$ProposalNamespaceToJson(ProposalNamespace instance) {
-  final val = <String, dynamic>{};
+  final val = <String, dynamic>{
+    'extensions': instance.extensions?.map((e) => e.toJson()).toList(),
+  };
 
   void writeNotNull(String key, dynamic value) {
     if (value != null) {
